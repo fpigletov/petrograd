@@ -1,0 +1,38 @@
+<section class="main__application application">
+  <div class="application__container container">
+    <h2 class="application__title">Оставить заявку</h2>
+    <form action="#" method="post" class="application__form">
+      <div class="application__inputs">
+        <label class="application__label">
+          <input type="text" name="name" placeholder="Ваше имя" class="application__input required">
+          <span class="application__error">Поле обязетельно к заполнению</span>
+        </label>
+        <label class="application__label">
+          <input type="tel" name="phone" placeholder="+7 ___-___-__-__" class="application__input required">
+          <span class="application__error">Поле обязетельно к заполнению</span>
+        </label>
+      </div>
+      <div class="application__submit">
+        <button type="submit" class="application__btn btn">Отправить</button>
+        <label class="application__policy">
+          <input type="checkbox" name="policy" class="application__checkbox required">
+          <span class="application__checkbox-descr">
+            Нажимая на кнопку «Отправить» вы соглашаетесь с нашей <a target="_blank" href="#">политикой
+              конфиденциальности</a>
+          </span>
+          <span class="application__error">Поле обязетельно к заполнению</span>
+        </label>
+      </div>
+      <div class="application__notice application-notice">
+        <span class="application-notice__icon">
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#mark"></use>
+          </svg>
+        </span>
+        <p class="application-notice__descr">
+          Ваша заявка успешно отправлена! Мы свяжемся с вами в ближайшее время
+        </p>
+      </div>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,193 @@
+.application
+  height: calc(100vh - 83px)
+  background-color: var(--light-color)
+  @media (max-width: 480px)    
+    height: calc(100vh - 71px)
+  @media (max-height: 650px)
+    height: auto  
+
+  &__container
+    height: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+    @media (max-width: 1025px)
+      justify-content: center
+  
+  &__title
+    font-family: var(--secondary-font-family)
+    font-size: 60px
+    line-height: 250%
+    letter-spacing: 0.02em
+    text-align: center
+    margin-bottom: 20px
+    @media (max-width: 1025px)
+      font-size: 50px
+      line-height: 150%
+      margin-bottom: 40px
+    @media (max-width: 480px)
+      font-size: 40px
+
+  &__form
+    max-width: 613px
+
+  &__inputs
+    margin-bottom: 40px
+    @media (max-width: 768px)
+      margin-bottom: 30px
+
+  &__label
+    display: block
+    width: 100%
+    height: 60px    
+    margin-bottom: 10px
+    &:last-child
+      margin-bottom: 0
+    &.err
+      margin-bottom: 40px 
+      .application__error
+        opacity: 1
+        visibility: visible
+      .application__input
+        border-color: var(--accent-color) 
+        &::placeholder
+          color: var(--accent-color) 
+
+  &__input
+    display: block
+    width: 100%
+    height: 100%   
+    outline: none    
+    border: 1px solid var(--input-color)
+    padding: 15px 20px 10px    
+    background-color: var(--white-color)
+    transition: border-color 0.3s ease, padding 0.3s ease
+    
+    &::placeholder        
+      font-size: 20px        
+      color: var(--input-color) 
+      transition: color 0.3s ease
+    @media (any-hover: hover)
+      &:hover
+        border-color: var(--dark-color) 
+    &.active,      
+    &:focus
+      border-color: var(--dark-color)         
+
+  &__error
+    display: block
+    font-size: 14px
+    color: var(--accent-color)
+    padding: 10px 0 0 20px
+    opacity: 0
+    visibility: hidden
+    transition: opacity 0.3s ease, visibility 0.3s ease
+
+  &__submit
+    display: flex 
+    align-items: flex-start
+    @media (max-width: 768px)
+      flex-direction: column
+
+  &__btn
+    margin-right: 15px
+    padding: 20px 45px 13px
+    @media (max-width: 768px)
+      margin: 0 0 20px 0
+    @media (max-width: 480px)
+      width: 100%
+      margin-bottom: 10px
+      padding: 22px 45px 15px      
+
+  &__policy 
+    margin-top: -6px
+    cursor: pointer    
+    @media (any-hover: hover)
+      &:hover
+        .application__checkbox-descr::before
+          border-color: var(--accent-color)
+    &.err      
+      .application__error
+        opacity: 1
+        visibility: visible
+      .application__checkbox-descr::before
+        border-color: var(--accent-color)  
+
+  &__checkbox
+    appearance: none
+    &:checked + .application__checkbox-descr::after
+      transform: scale(1)
+    &:checked + .application__checkbox-descr::before
+      border-color: var(--accent-color)
+
+    &:focus-visible + .application__checkbox-descr
+      outline: 2px solid var(--dark-color)  
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button
+      -webkit-appearance: none
+      margin: 0    
+
+  &__checkbox-descr
+    position: relative
+    display: inline-block
+    font-size: 14px
+    line-height: 110%
+    padding-left: 16px 
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0    
+      width: 10px
+      height: 10px
+      border: 1px solid var(--dark-color) 
+      transition: border-color 0.3s ease
+    &::after
+      transition: all 0.3 ease 0s
+      position: absolute
+      content: ''
+      top: 3px
+      left: 3px
+      width: 4px
+      height: 4px
+      background-color: var(--accent-color)
+      transform: scale(0)
+      transition: transform 0.3s ease
+    a
+      transition: color 0.3s ease
+      @media (any-hover: hover)
+        &:hover          
+          color: var(--accent-color)
+
+  &__notice
+    display: flex
+    align-items: flex-start
+    padding: 25px 0
+    opacity: 0
+    visibility: hidden
+    transition: opacity 0.3s ease, visibility 0.3s ease
+    &.active
+      opacity: 1
+      visibility: visible
+    @media (max-width: 480px)
+      padding: 10px 0
+
+.application-notice
+
+  &__icon
+    display: flex
+    align-items: center
+    justify-content: center
+    flex: 0 0 24px
+    height: 24px
+    border-radius: 100%
+    border: 1px solid var(--success-color)
+    margin-right: 16px
+    svg
+      width: 10px
+      height: 8px
+      fill: var(--success-color)
+
+  &__descr
+    padding-top: 2px

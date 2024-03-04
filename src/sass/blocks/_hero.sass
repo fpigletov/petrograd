@@ -1,0 +1,89 @@
+.hero
+  height: 100vh
+  background: linear-gradient(96.5deg, var(--light-color) 69%, var(--accent-color) 69.2%)
+  overflow: hidden
+  @media (max-width: 1025px)
+    height: auto
+    background: linear-gradient(-175deg, var(--light-color) 75%, var(--accent-color) 75.2%)
+
+  &__body
+    position: relative
+    @media (max-width: 1025px)
+      position: static
+
+  &__content
+    position: relative
+    z-index: 2
+    @media (max-width: 1025px)
+      position: static
+      margin-bottom: 10vw
+    @media (max-width: 768px)
+      margin-bottom: 80px
+    @media (max-width: 480px)
+      display: flex
+      flex-direction: column
+      align-items: center
+      margin-bottom: 68px
+
+  &__descr
+    display: inline-block
+    font-style: italic
+    font-size: 30px
+    line-height: 35px
+    color: var(--accent-color)
+    overflow: hidden   
+    @media (max-width: 480px)
+      font-size: 20px
+      line-height: 23px
+      margin: 0 0 8px 8px
+
+  &__title    
+    font-family: var(--secondary-font-family)    
+    margin: -2px 0 50px -9px    
+    @media (max-width: 480px)
+      display: flex
+      flex-direction: column
+      align-items: center
+      margin: 0 0 30px 0
+
+  &__title-inner
+    display: inline-block
+    overflow: hidden
+    span
+      display: inline-block
+      font-size: 7.35vw
+      line-height: 150%
+      letter-spacing: 0.02em
+      @media (min-width: 1366px)
+        font-size: 100px
+      @media (max-width: 1025px)
+        font-size: 9vw
+      @media (max-width: 480px)
+        font-size: 40px      
+
+  &__btn    
+    border-radius: 2px
+    transform: skew(-15deg)
+    margin-left: 6px
+    padding: 17px 51px 10px
+    span
+      transform: skew(15deg)
+    @media (max-width: 480px)
+      margin: 0
+      padding: 14px 49px 6px
+
+  &__img    
+    position: absolute
+    top: calc(50% + 37px)
+    right: -49px
+    width: 70%
+    transform: translateY(-50%)
+    z-index: 1
+    @media (max-width: 1300px)
+      right: -30px
+    @media (max-width: 1025px)
+      position: static
+      width: 100%
+      transform: translateY(0%)
+    @media (max-width: 480px)
+      transform: translateX(-5px)

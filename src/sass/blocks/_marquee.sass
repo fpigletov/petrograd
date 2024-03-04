@@ -1,0 +1,146 @@
+.marquee
+  height: 100vh 
+  position: relative
+  background-color: var(--accent-color)
+  overflow: hidden
+
+  &__title
+    width: 100%  
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    @media (max-width: 480px)
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      height: calc(100% - 83px) 
+      top: 83px
+      transform: translateY(0%)      
+
+  &__wrapper
+    display: flex
+    width: 100%    
+    padding: 22px 0
+    text-transform: uppercase
+
+    &--right
+      .marquee__inner
+        flex-direction: row-reverse
+
+    @media (max-width: 480px)
+      padding: 0
+
+  &__inner
+    display: flex
+    align-items: center
+    min-width: 100% 
+    width: fit-content
+
+  &__text
+    font-size: 120px
+    font-style: italic
+    font-weight: 700    
+    line-height: 83%
+    letter-spacing: 0.03em
+    text-transform: uppercase    
+    padding: 0 20px
+
+    &--fill  
+      color: var(--white-color)    
+
+    &--stroke
+      color: var(--accent-color)   
+      -webkit-text-stroke: 2px var(--white-color)
+
+    @media (max-width: 480px)
+      font-size: 14.78vh
+      padding: 0 10px
+
+  &__content
+    width: 438px
+    height: 584px
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%) 
+    background-color: var(--white-color)
+    @media (max-width: 768px)
+      width: 60vw
+      height: 75vw
+    @media (max-width: 480px)
+      width: 88vw
+      height: 54.31vh
+
+  &__video
+    width: 100%
+    height: 100%
+    video
+      width: 100%
+      height: 100%
+      object-fit: cover
+
+  &__img
+    width: 100%
+    height: 100% 
+
+  &__btn
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 135px
+    height: 135px
+    position: absolute
+    bottom: -68px
+    right: -68px    
+    svg
+      width: 100%
+      height: 100%
+      fill: var(--dark-color)      
+    @media (any-hover: hover)
+      &:hover
+        .marquee__btn-inner svg 
+          fill: var(--accent-color)
+    &:active
+      .marquee__btn-inner svg 
+        fill: var(--hover-color) 
+
+    @media (max-width: 768px) 
+      width: 101px
+      height: 101px 
+      bottom: -51px
+      right: 50%  
+      transform: translateX(50%)
+
+    &--video
+      .marquee__btn-inner svg 
+        width: 29px
+        height: 32px        
+        transform: translateX(4px)
+        @media (max-width: 768px) 
+          width: 27px
+          height: 28px 
+
+    &--goto
+      .marquee__btn-inner svg 
+          width: 25px
+          height: 24px 
+          @media (max-width: 768px) 
+            width: 20px
+            height: 18px 
+
+  &__btn-inner
+    position: absolute
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 99px
+    height: 99px
+    border-radius: 100%
+    background-color: var(--white-color)
+    border: 1px solid var(--dark-color)   
+    svg
+      fill: var(--dark-color)
+      transition: fill 0.3s ease 
+    @media (max-width: 768px) 
+      width: 74px
+      height: 74px 

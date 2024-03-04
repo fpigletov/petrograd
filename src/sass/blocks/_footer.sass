@@ -1,0 +1,31 @@
+.footer  
+  background-color: var(--dark-color)    
+
+  &__body
+    min-height: 83px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 15px 0
+    @media (max-width: 768px)
+      flex-direction: column
+    @media (max-width: 480px)
+      min-height: 71px
+      font-size: 14px
+
+  &__copyright
+    color: var(--white-color)
+    span
+      padding-left: 3px
+
+  &__madein
+    color: #5a636b
+
+  &__link
+    color: var(--white-color)    
+    border-bottom: 1px solid var(--white-color)
+    transition: color 0.3s ease, border-color 0.3s ease
+    @media (any-hover: hover)
+      &:hover
+        color: var(--accent-color)
+        border-color: var(--accent-color)
